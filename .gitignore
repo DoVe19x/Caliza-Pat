@@ -1,1 +1,15 @@
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs / divers
+*.log
+node_modules/
