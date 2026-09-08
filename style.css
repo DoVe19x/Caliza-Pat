@@ -324,6 +324,11 @@ textarea{resize:vertical;min-height:120px}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.map-embed{
+  grid-column:1/-1;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line);
+}
+.map-embed iframe{width:100%;height:320px;border:0;display:block}
 .contact-list{margin:24px 0 28px;display:flex;flex-direction:column;gap:16px}
 .contact-list li{display:flex;flex-direction:column;gap:2px}
 .contact-label{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold)}
@@ -424,6 +429,7 @@ body.no-scroll{overflow:hidden}
   .header-inner{height:64px}
   .nav{top:64px;max-height:calc(100vh - 64px)}
   .order-info{grid-template-columns:1fr}
+  .map-embed iframe{height:260px}
   .lightbox{padding:14px}
   .lightbox-figure{max-width:calc(100% - 92px)}
   .lightbox-figure img{max-height:76vh}

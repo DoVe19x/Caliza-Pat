@@ -1,4 +1,4 @@
-/* Traductions du site Caliza — FR / EN / NL
+/* Traductions du site Caliza : FR / EN / NL
    Les valeurs (value="") des <select> et des radios restent en français :
    seule la partie visible est traduite, pour que le message envoyé à Caliza
    soit toujours dans la même langue. */
@@ -36,6 +36,7 @@
         "a11y.lightbox": "Photo agrandie",
         "a11y.fbCaliza": "Caliza sur Facebook",
         "a11y.viewFull": "Voir la photo en entier : {title}",
+        "a11y.mapTitle": "Localisation approximative à Braine-le-Château",
 
         "hero.eyebrow": "Atelier artisanal · Braine-le-Château",
         "hero.title": "Le gâteau que vous avez <br class=\"br-md\">imaginé, réalisé sur mesure",
@@ -47,7 +48,7 @@
         "strip.1num": "100%",
         "strip.1txt": "Sur mesure, aucune pièce standard",
         "strip.2num": "Belgique",
-        "strip.2txt": "Braine-le-Château et environs",
+        "strip.2txt": "Braine-le-Château",
         "strip.3num": "Devis",
         "strip.3txt": "Personnalisé après échange téléphonique",
 
@@ -118,9 +119,9 @@
         "opt.shape.other": "Autre",
         "opt.budget.none": "Pas de budget précis",
         "opt.budget.u30": "Moins de 30€",
-        "opt.budget.b1": "30€ - 60€",
-        "opt.budget.b2": "60€ - 100€",
-        "opt.budget.b3": "100€ - 200€",
+        "opt.budget.b1": "30€ à 60€",
+        "opt.budget.b2": "60€ à 100€",
+        "opt.budget.b3": "100€ à 200€",
         "opt.budget.o200": "Plus de 200€",
 
         "radio.pickup": "Retrait à Braine-le-Château",
@@ -150,7 +151,7 @@
         "contact.labelSector": "Secteur",
         "contact.labelVat": "Numéro d'entreprise",
         "contact.sectorText":
-          "Braine-le-Château et environs — retrait sur place ou livraison. L'adresse exacte est communiquée lors de la confirmation de la commande.",
+          "Braine-le-Château. Retrait sur place ou livraison. L'adresse exacte est communiquée lors de la confirmation de la commande.",
         "contact.btnWa": "Écrire sur WhatsApp",
         "contact.btnEmail": "Envoyer un email",
         "contact.fb": "Facebook",
@@ -268,6 +269,7 @@
         "a11y.lightbox": "Enlarged photo",
         "a11y.fbCaliza": "Caliza on Facebook",
         "a11y.viewFull": "View the full photo: {title}",
+        "a11y.mapTitle": "Approximate location in Braine-le-Château",
 
         "hero.eyebrow": "Artisan workshop · Braine-le-Château",
         "hero.title": "The cake you imagined, <br class=\"br-md\">made just for you",
@@ -277,9 +279,9 @@
         "hero.ctaGallery": "See all the inspiration",
 
         "strip.1num": "100%",
-        "strip.1txt": "Bespoke — nothing off the shelf",
+        "strip.1txt": "Bespoke, nothing off the shelf",
         "strip.2num": "Belgium",
-        "strip.2txt": "Braine-le-Château and nearby",
+        "strip.2txt": "Braine-le-Château",
         "strip.3num": "Quote",
         "strip.3txt": "Personalised after a phone chat",
 
@@ -350,9 +352,9 @@
         "opt.shape.other": "Other",
         "opt.budget.none": "No set budget",
         "opt.budget.u30": "Under €30",
-        "opt.budget.b1": "€30 – €60",
-        "opt.budget.b2": "€60 – €100",
-        "opt.budget.b3": "€100 – €200",
+        "opt.budget.b1": "€30 to €60",
+        "opt.budget.b2": "€60 to €100",
+        "opt.budget.b3": "€100 to €200",
         "opt.budget.o200": "Over €200",
 
         "radio.pickup": "Pick-up in Braine-le-Château",
@@ -382,7 +384,7 @@
         "contact.labelSector": "Area",
         "contact.labelVat": "Company number",
         "contact.sectorText":
-          "Braine-le-Château and nearby — pick-up on site or delivery. The exact address is shared once the order is confirmed.",
+          "Braine-le-Château. Pick-up on site or delivery. The exact address is shared once the order is confirmed.",
         "contact.btnWa": "Message on WhatsApp",
         "contact.btnEmail": "Send an email",
         "contact.fb": "Facebook",
@@ -500,6 +502,7 @@
         "a11y.lightbox": "Vergrote foto",
         "a11y.fbCaliza": "Caliza op Facebook",
         "a11y.viewFull": "Bekijk de volledige foto: {title}",
+        "a11y.mapTitle": "Locatie bij benadering in Braine-le-Château",
 
         "hero.eyebrow": "Ambachtelijk atelier · Braine-le-Château",
         "hero.title": "De taart die jij bedacht, <br class=\"br-md\">op maat gemaakt",
@@ -511,7 +514,7 @@
         "strip.1num": "100%",
         "strip.1txt": "Op maat, niets standaard",
         "strip.2num": "België",
-        "strip.2txt": "Braine-le-Château en omgeving",
+        "strip.2txt": "Braine-le-Château",
         "strip.3num": "Offerte",
         "strip.3txt": "Op maat na een telefoongesprek",
 
@@ -582,9 +585,9 @@
         "opt.shape.other": "Andere",
         "opt.budget.none": "Geen vast budget",
         "opt.budget.u30": "Minder dan €30",
-        "opt.budget.b1": "€30 – €60",
-        "opt.budget.b2": "€60 – €100",
-        "opt.budget.b3": "€100 – €200",
+        "opt.budget.b1": "€30 tot €60",
+        "opt.budget.b2": "€60 tot €100",
+        "opt.budget.b3": "€100 tot €200",
         "opt.budget.o200": "Meer dan €200",
 
         "radio.pickup": "Afhalen in Braine-le-Château",
@@ -614,7 +617,7 @@
         "contact.labelSector": "Regio",
         "contact.labelVat": "Ondernemingsnummer",
         "contact.sectorText":
-          "Braine-le-Château en omgeving — afhalen ter plaatse of levering. Het exacte adres wordt meegedeeld bij de bevestiging van de bestelling.",
+          "Braine-le-Château. Afhalen ter plaatse of levering. Het exacte adres wordt meegedeeld bij de bevestiging van de bestelling.",
         "contact.btnWa": "Bericht via WhatsApp",
         "contact.btnEmail": "Een e-mail sturen",
         "contact.fb": "Facebook",

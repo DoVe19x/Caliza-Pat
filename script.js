@@ -101,6 +101,9 @@
     document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
       el.setAttribute("alt", t(el.getAttribute("data-i18n-alt")));
     });
+    document.querySelectorAll("[data-i18n-title]").forEach(function (el) {
+      el.setAttribute("title", t(el.getAttribute("data-i18n-title")));
+    });
   }
 
   function applyMeta() {
@@ -516,7 +519,7 @@
 
   function eventLabelFr(data) {
     if (data.eventType === "Autre occasion" && data.eventOther) {
-      return "Autre occasion — " + data.eventOther;
+      return "Autre occasion : " + data.eventOther;
     }
     return data.eventType || "-";
   }
