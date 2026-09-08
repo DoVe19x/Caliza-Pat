@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var WHATSAPP_NUMBER = "32476781586";
+  var WHATSAPP_NUMBER = "32470841257";
   var EMAIL_ADDRESS = "caliza-pat@hotmail.com";
   var LANG_KEY = "caliza-lang";
 
