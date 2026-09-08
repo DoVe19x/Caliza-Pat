@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light">
 <meta name="format-detection" content="telephone=yes">
 <title>Caliza / Pâtisserie artisanale sur mesure</title>
-<meta name="description" content="Caliza, atelier artisanal de gâteaux personnalisés à Wauthier-Braine (Braine-le-Château). Anniversaires, mariages, entremets sur mesure. Décrivez votre gâteau de rêve, on s'occupe du reste.">
+<meta name="description" content="Caliza, atelier artisanal de gâteaux personnalisés à Braine-le-Château. Anniversaires, mariages, entremets sur mesure. Décrivez votre gâteau de rêve, on s'occupe du reste.">
 <link rel="canonical" href="https://www.caliza-pat.be/">
 
 <!-- Open Graph / réseaux sociaux -->
@@ -15,13 +15,13 @@
 <meta property="og:locale" content="fr_BE">
 <meta property="og:site_name" content="Caliza">
 <meta property="og:title" content="Caliza : Pâtisserie artisanale sur mesure">
-<meta property="og:description" content="Gâteaux personnalisés faits main à Wauthier-Braine (Braine-le-Château) : anniversaires, mariages, entremets. Décrivez votre gâteau de rêve, on s'occupe du reste.">
-<meta property="og:image" content="https://www.caliza-pat.be/assets/gateaux/mariage-coeur.jpg">
+<meta property="og:description" content="Gâteaux personnalisés faits main à Braine-le-Château : anniversaires, mariages, entremets. Décrivez votre gâteau de rêve, on s'occupe du reste.">
+<meta property="og:image" content="https://www.caliza-pat.be/assets/gateaux/mariage-e-l-roses.jpg">
 <meta property="og:url" content="https://www.caliza-pat.be/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Caliza : Pâtisserie artisanale sur mesure">
-<meta name="twitter:description" content="Gâteaux personnalisés faits main à Wauthier-Braine (Braine-le-Château). Décrivez votre gâteau de rêve, on s'occupe du reste.">
-<meta name="twitter:image" content="https://www.caliza-pat.be/assets/gateaux/mariage-coeur.jpg">
+<meta name="twitter:description" content="Gâteaux personnalisés faits main à Braine-le-Château. Décrivez votre gâteau de rêve, on s'occupe du reste.">
+<meta name="twitter:image" content="https://www.caliza-pat.be/assets/gateaux/mariage-e-l-roses.jpg">
 
 <link rel="icon" href="assets/logo.jpg">
 <link rel="apple-touch-icon" href="assets/logo.jpg">
@@ -35,15 +35,15 @@
   "@type": "Bakery",
   "name": "Caliza",
   "alternateName": "Caliza-pat, L'Audacieuse Pâtisserie",
-  "image": "https://www.caliza-pat.be/assets/logo.jpg",
+  "image": "https://www.caliza-pat.be/assets/gateaux/mariage-e-l-roses.jpg",
   "telephone": "+32476781586",
   "email": "caliza-pat@hotmail.com",
   "priceRange": "€€",
+  "areaServed": "Braine-le-Château et environs",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Clos du Moulin Linard 6/0",
+    "addressLocality": "Braine-le-Château",
     "postalCode": "1440",
-    "addressLocality": "Wauthier-Braine (Braine-le-Château)",
     "addressCountry": "BE"
   },
   "sameAs": [
@@ -79,27 +79,40 @@
 
   <section class="hero">
     <div class="wrap hero-inner">
-      <p class="eyebrow">Atelier artisanal · Wauthier-Braine</p>
+      <p class="eyebrow center">Atelier artisanal · Braine-le-Château</p>
       <h1>Le gâteau que vous avez <br class="br-md">imaginé, réalisé sur mesure</h1>
       <p class="hero-lede">
         Chez Caliza, chaque pièce est créée à la main pour votre événement : anniversaires,
-        mariages, entremets et créations uniques. Décrivez-nous votre envie en quelques mots,
-        inspirez-vous de nos réalisations, et on construit un devis rien que pour vous.
+        mariages, entremets et créations uniques. Décrivez-nous votre envie en quelques mots
+        et on construit un devis rien que pour vous.
       </p>
-      <div class="hero-actions">
-        <a href="#commander" class="btn btn-primary">Décrire mon gâteau</a>
-        <a href="#inspiration-gallery" class="btn btn-outline">Voir les inspirations</a>
-      </div>
     </div>
-    <div class="hero-deco">
-      <img src="assets/gateaux/mariage-coeur.jpg" alt="Création Caliza : pièce en cœur, roses et finition dorée" class="hero-photo">
+
+    <div class="carousel hero-carousel" id="heroCarousel" aria-roledescription="carrousel" aria-label="Créations Caliza">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="heroTrack">
+          <!-- Slides injected by script.js -->
+        </div>
+        <button type="button" class="carousel-btn carousel-prev" id="heroPrev" aria-label="Photo précédente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="carousel-btn carousel-next" id="heroNext" aria-label="Photo suivante">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="carousel-dots" id="heroDots" role="tablist" aria-label="Choisir une photo"></div>
+    </div>
+
+    <div class="wrap hero-actions center">
+      <a href="#commander" class="btn btn-primary">Commander mon gâteau</a>
+      <a href="#inspiration-gallery" class="btn btn-outline">Voir toutes les inspirations</a>
     </div>
   </section>
 
   <section class="strip">
     <div class="wrap strip-inner">
       <div class="strip-item"><strong>100%</strong><span>Sur mesure, aucune pièce standard</span></div>
-      <div class="strip-item"><strong>Belgique</strong><span>Wauthier-Braine · Braine-le-Château</span></div>
+      <div class="strip-item"><strong>Belgique</strong><span>Braine-le-Château et environs</span></div>
       <div class="strip-item"><strong>Devis</strong><span>Personnalisé après échange téléphonique</span></div>
     </div>
   </section>
@@ -109,9 +122,9 @@
       <p class="eyebrow center">Galerie d'inspiration</p>
       <h2 class="section-title center">Besoin d'idées ? Piochez ici</h2>
       <p class="section-lede center">
-        Voici quelques styles de créations possibles chez Caliza. Cliquez sur « M'inspirer de
-        celui-ci » pour pré-remplir votre note de commande. Vous pourrez ensuite l'adapter à
-        vos goûts, vos couleurs et vos saveurs.
+        Voici quelques styles de créations possibles chez Caliza. Cliquez sur une photo pour
+        la voir en entier, ou sur « M'inspirer de celui-ci » pour pré-remplir votre note de
+        commande. Vous pourrez ensuite l'adapter à vos goûts, vos couleurs et vos saveurs.
       </p>
 
       <div class="gallery-filters" id="galleryFilters" role="group" aria-label="Filtrer les inspirations"></div>
@@ -143,7 +156,7 @@
         </div>
         <div class="order-info-item">
           <strong>Retrait ou livraison</strong>
-          <span>À Wauthier-Braine, ou livraison possible selon la distance (à discuter ensemble).</span>
+          <span>Retrait à Braine-le-Château, ou livraison (souvent assurée par Caliza) selon la distance.</span>
         </div>
       </div>
 
@@ -166,6 +179,10 @@
               <option value="Baptême / communion">Baptême / communion</option>
               <option value="Autre occasion">Autre occasion</option>
             </select>
+          </div>
+          <div class="field hidden" id="eventOtherField">
+            <label for="eventOther">Précisez l'occasion</label>
+            <input type="text" id="eventOther" name="eventOther" placeholder="Ex. départ à la retraite, baby shower, Saint-Valentin…">
           </div>
           <div class="field">
             <label for="date">Date souhaitée</label>
@@ -211,8 +228,8 @@
             <span class="field-legend">Mode de retrait</span>
             <div class="radio-group" id="fulfilmentGroup">
               <label class="radio-option">
-                <input type="radio" name="fulfilment" value="Retrait à Wauthier-Braine" checked>
-                Retrait à Wauthier-Braine
+                <input type="radio" name="fulfilment" value="Retrait à Braine-le-Château" checked>
+                Retrait à Braine-le-Château
               </label>
               <label class="radio-option">
                 <input type="radio" name="fulfilment" value="Livraison souhaitée">
@@ -221,8 +238,9 @@
             </div>
           </div>
           <div class="field field-full hidden" id="addressField">
-            <label for="address">Adresse de livraison</label>
+            <label for="address">Adresse de livraison <span class="optional">(optionnel)</span></label>
             <input type="text" id="address" name="address" placeholder="Rue, numéro, code postal, ville">
+            <span class="field-hint">Vous pouvez aussi nous la communiquer plus tard, de vive voix.</span>
           </div>
           <div class="field field-full">
             <label for="allergies">Allergies / régimes alimentaires <span class="optional">(important)</span></label>
@@ -234,7 +252,7 @@
           </div>
           <div class="field field-full">
             <label for="inspiration">Inspiration choisie <span class="optional">(optionnel)</span></label>
-            <input type="text" id="inspiration" name="inspiration" placeholder="Ex. « Entremets fruits rouges »" readonly>
+            <input type="text" id="inspiration" name="inspiration" placeholder="Cliquez une photo « M'inspirer de celui-ci » ou écrivez librement ici">
           </div>
         </div>
 
@@ -270,10 +288,9 @@
         <p class="eyebrow">L'atelier</p>
         <h2 class="section-title">Une pâtisserie pensée pour votre événement</h2>
         <p>
-          Caliza est un atelier artisanal belge basé à Wauthier-Braine, dans l'entité de
-          Braine-le-Château. Chaque gâteau (anniversaire, pièce montée de mariage ou entremets)
-          est conçu à la main, en fonction de vos envies : saveurs, couleurs, thème, texture,
-          contraintes alimentaires.
+          Caliza est un atelier artisanal belge basé à Braine-le-Château. Chaque gâteau
+          (anniversaire, pièce montée de mariage ou entremets) est conçu à la main, en fonction
+          de vos envies : saveurs, couleurs, thème, texture, contraintes alimentaires.
         </p>
         <p>
           Il n'existe pas de menu à prix fixe : après un échange par téléphone, nous définissons
@@ -299,8 +316,8 @@
             <a href="mailto:caliza-pat@hotmail.com">caliza-pat@hotmail.com</a>
           </li>
           <li>
-            <span class="contact-label">Adresse</span>
-            <span>Clos du Moulin Linard 6/0, 1440 Wauthier-Braine (Braine-le-Château), Belgique</span>
+            <span class="contact-label">Secteur</span>
+            <span>Braine-le-Château et environs — retrait sur place ou livraison. L'adresse exacte est communiquée lors de la confirmation de la commande.</span>
           </li>
           <li>
             <span class="contact-label">Numéro d'entreprise</span>
@@ -327,14 +344,6 @@
           <li>Vous recevez un devis personnalisé, sans engagement.</li>
         </ol>
       </div>
-      <div class="map-embed">
-        <iframe
-          src="https://www.google.com/maps?q=Clos+du+Moulin+Linard+6,+1440+Wauthier-Braine,+Belgique&output=embed"
-          title="Localisation de Caliza à Wauthier-Braine"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
     </div>
   </section>
 
@@ -345,10 +354,10 @@
     <div class="footer-brand">
       <img src="assets/logo.jpg" alt="Caliza-pat" class="logo-img">
       <span class="logo-text">Caliza</span>
-      <p>Pâtisserie artisanale sur mesure. Wauthier-Braine, Belgique.</p>
+      <p>Pâtisserie artisanale sur mesure. Braine-le-Château, Belgique.</p>
     </div>
     <div class="footer-legal">
-      <p>Caliza · Clos du Moulin Linard 6/0, 1440 Wauthier-Braine (Braine-le-Château)</p>
+      <p>Caliza · Braine-le-Château, Belgique</p>
       <p>TVA / n° d'entreprise : BE 1019.119.711. Entreprise active depuis le 01/04/2025</p>
       <p>© <span id="year"></span> Caliza. Tous droits réservés.</p>
       <a href="https://www.facebook.com/share/1EMs3Ksw3k/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Caliza sur Facebook" class="social-link social-link-footer">
@@ -358,6 +367,25 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <div class="lightbox-backdrop" data-close></div>
+  <div class="lightbox-content">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Photo précédente">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Photo suivante">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
