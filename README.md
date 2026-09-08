@@ -7,10 +7,21 @@ artisanal de pâtisserie sur mesure à Wauthier-Braine (Braine-le-Château, Belg
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Page unique du site |
+| `index.html` | Page unique du site (textes marqués `data-i18n`) |
 | `style.css` | Styles (responsive, mobile / iOS / navigateurs modernes) |
-| `script.js` | Galerie d'inspiration, filtres, formulaire de commande (WhatsApp / email) |
+| `i18n.js` | Traductions FR / EN / NL (dictionnaire + textes des gâteaux) |
+| `script.js` | Carrousel, galerie, lightbox, filtres, sélecteur de langue, formulaire (WhatsApp / email) |
 | `assets/` | Logo et photos utilisées par le site |
+
+## Langues
+
+Le site est en **français par défaut**. Le sélecteur **FR / EN / NL** (en-tête) bascule
+tout le contenu visible et mémorise le choix du visiteur (`localStorage`). Le message
+de commande envoyé à Caliza reste toujours en français.
+
+Pour modifier un texte : chercher sa clé dans `index.html` (`data-i18n="..."`) puis
+éditer les trois langues dans `i18n.js`. Les titres/descriptions des gâteaux sont
+dans `i18n.js` (objet `cakes`), la liste des photos dans `script.js` (tableau `cakes`).
 
 ## Aperçu en local
 
@@ -33,6 +44,6 @@ URL publique : `https://dove19x.github.io/Caliza-Pat/`
 
 ## Mise à jour du contenu
 
-- Textes : directement dans `index.html`.
-- Galerie de gâteaux : tableau `cakes` en haut de `script.js`.
+- Textes : `i18n.js` (les 3 langues) ; la clé se trouve dans `index.html` (`data-i18n`).
+- Galerie de gâteaux : photos dans `script.js` (tableau `cakes`), titres/descriptions dans `i18n.js` (`cakes`).
 - Coordonnées / n° WhatsApp : `script.js` (`WHATSAPP_NUMBER`, `EMAIL_ADDRESS`) et `index.html`.

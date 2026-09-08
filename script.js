@@ -3,119 +3,78 @@
 
   var WHATSAPP_NUMBER = "32476781586";
   var EMAIL_ADDRESS = "caliza-pat@hotmail.com";
+  var LANG_KEY = "caliza-lang";
+
+  var I18N = window.CALIZA_I18N || { fr: { t: {}, cakes: {}, tagLabels: {}, meta: {} } };
+  var LANGS = window.CALIZA_LANGS || ["fr"];
+  var FALLBACK = I18N.fr;
 
   var prefersReducedMotion =
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Ordre = ordre d'affichage dans la galerie. Le nouveau gâteau de mariage
+  // est la 1re photo (photo de présentation principale du carrousel).
   var cakes = [
-    {
-      title: "Mariage « E & L », roses rouges",
-      desc: "Pièce montée deux étages, finition perlée et éclats d'or, ruban rouge, monogramme et roses rouges fraîches. Pensée pour une table de mariage.",
-      tags: ["Mariage", "Chic"],
-      img: "assets/gateaux/mariage-e-l-roses.jpg",
-      feature: true,
-    },
-    {
-      title: "Cœur fruits rouges",
-      desc: "Chantilly légère, framboises, myrtilles, grenade et physalis pour une pièce généreuse et fraîche.",
-      tags: ["Anniversaire", "Fruité"],
-      img: "assets/gateaux/coeur-fruits-rouges.jpg",
-      feature: true,
-    },
-    {
-      title: "Drip cake macarons",
-      desc: "Coulures dorées, crème rose et macarons violets pour une création chic et gourmande.",
-      tags: ["Anniversaire", "Chic"],
-      img: "assets/gateaux/drip-macarons.jpg",
-      feature: true,
-    },
-    {
-      title: "Lettre « M » fruitée",
-      desc: "Cake lettre garni de mangue, abricot, grenade et fleurs comestibles. Idéal pour un prénom ou une initiale.",
-      tags: ["Lettres & chiffres", "Fruité"],
-      img: "assets/gateaux/lettre-m-fruits.jpg",
-    },
-    {
-      title: "Chiffre gourmand chocolat",
-      desc: "Number cake tout chocolat, biscuits, chamallows et éclats dorés pour marquer un cap important.",
-      tags: ["Anniversaire", "Chocolat", "Lettres & chiffres"],
-      img: "assets/gateaux/chiffre-chocolat.jpg",
-      feature: true,
-    },
-    {
-      title: "Lettre « S » chantilly",
-      desc: "Cake lettre garni de rosaces chocolat/vanille, biscuits et perles dorées.",
-      tags: ["Lettres & chiffres", "Chocolat"],
-      img: "assets/gateaux/lettre-s-chantilly.jpg",
-    },
-    {
-      title: "Pièce « 75 ans »",
-      desc: "Gâteau rond parme, macarons, fruits rouges et fleurs en pâte à sucre pour un anniversaire marquant.",
-      tags: ["Anniversaire", "Chic"],
-      img: "assets/gateaux/75-ans-macarons.jpg",
-      feature: true,
-    },
-    {
-      title: "Roses meringuées pastel",
-      desc: "Grandes roses en meringue scintillante sur un entremets tout en douceur.",
-      tags: ["Anniversaire", "Chic"],
-      img: "assets/gateaux/meringues-roses.jpg",
-    },
-    {
-      title: "Blanc & rose, nœuds satinés",
-      desc: "Finition épurée, cœurs pastel et nœuds en ruban pour une pièce délicate.",
-      tags: ["Anniversaire", "Chic"],
-      img: "assets/gateaux/blanc-rose-noeuds.jpg",
-    },
-    {
-      title: "Éventail doré, roses rouges",
-      desc: "Motif en éventail pailleté et bouquet de roses rouges fraîches pour une occasion élégante.",
-      tags: ["Chic", "Mariage"],
-      img: "assets/gateaux/eventail-roses-rouges.jpg",
-      feature: true,
-    },
-    {
-      title: "Cœur fraises & fleurs fraîches",
-      desc: "Chantilly, fraises fraîches, myrtilles et fleurs comestibles sur une base en forme de cœur.",
-      tags: ["Anniversaire", "Fruité"],
-      img: "assets/gateaux/coeur-fraises-fleurs.jpg",
-    },
-    {
-      title: "Pièce de mariage « Mr & Mrs »",
-      desc: "Cake cœur aux fruits rouges et roses fraîches, pensé pour sublimer une table de mariage.",
-      tags: ["Mariage", "Fruité"],
-      img: "assets/gateaux/mariage-coeur.jpg",
-      feature: true,
-    },
-    {
-      title: "Bouquet fleuri surprise",
-      desc: "Un gâteau qui se dévoile en bouquet de fleurs fraîches à l'ouverture. Effet garanti.",
-      tags: ["Anniversaire", "Chic"],
-      img: "assets/gateaux/bouquet-fleuri.jpg",
-    },
-    {
-      title: "Gâteau nu au chocolat",
-      desc: "Génoise chocolat et crème mousseline entre les couches, dans un style « naked cake » brut et gourmand.",
-      tags: ["Chocolat", "Anniversaire"],
-      img: "assets/gateaux/gateau-nu-chocolat.jpg",
-    },
-    {
-      title: "Bûche au chocolat croustillant",
-      desc: "Biscuit croquant, mousse chocolat et enrobage chocolat-noisette. Un classique revisité pour les fêtes.",
-      tags: ["Chocolat", "Fêtes"],
-      img: "assets/gateaux/buche-chocolat.jpg",
-    },
+    { id: "mariage-el", img: "assets/gateaux/mariage-e-l-roses.jpg", tags: ["Mariage", "Chic"], feature: true },
+    { id: "coeur-fruits-rouges", img: "assets/gateaux/coeur-fruits-rouges.jpg", tags: ["Anniversaire", "Fruité"], feature: true },
+    { id: "drip-macarons", img: "assets/gateaux/drip-macarons.jpg", tags: ["Anniversaire", "Chic"], feature: true },
+    { id: "lettre-m", img: "assets/gateaux/lettre-m-fruits.jpg", tags: ["Lettres & chiffres", "Fruité"] },
+    { id: "chiffre-chocolat", img: "assets/gateaux/chiffre-chocolat.jpg", tags: ["Anniversaire", "Chocolat", "Lettres & chiffres"], feature: true },
+    { id: "lettre-s", img: "assets/gateaux/lettre-s-chantilly.jpg", tags: ["Lettres & chiffres", "Chocolat"] },
+    { id: "piece-75", img: "assets/gateaux/75-ans-macarons.jpg", tags: ["Anniversaire", "Chic"], feature: true },
+    { id: "meringues-roses", img: "assets/gateaux/meringues-roses.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "blanc-rose", img: "assets/gateaux/blanc-rose-noeuds.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "eventail", img: "assets/gateaux/eventail-roses-rouges.jpg", tags: ["Chic", "Mariage"], feature: true },
+    { id: "coeur-fraises", img: "assets/gateaux/coeur-fraises-fleurs.jpg", tags: ["Anniversaire", "Fruité"] },
+    { id: "mariage-mrmrs", img: "assets/gateaux/mariage-coeur.jpg", tags: ["Mariage", "Fruité"], feature: true },
+    { id: "bouquet", img: "assets/gateaux/bouquet-fleuri.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "gateau-nu", img: "assets/gateaux/gateau-nu-chocolat.jpg", tags: ["Chocolat", "Anniversaire"] },
+    { id: "buche", img: "assets/gateaux/buche-chocolat.jpg", tags: ["Chocolat", "Fêtes"] },
   ];
 
-  var ALL_FILTER = "Tous";
+  var ALL_FILTER = "__ALL__";
+  var currentLang = "fr";
+  var currentFilter = ALL_FILTER;
+
+  /* ---------- Helpers i18n ---------- */
+
+  function dict() { return I18N[currentLang] || FALLBACK; }
+
+  function t(key, vars) {
+    var d = dict();
+    var s =
+      (d.t && d.t[key] != null ? d.t[key] : null) ||
+      (FALLBACK.t && FALLBACK.t[key] != null ? FALLBACK.t[key] : null) ||
+      key;
+    if (vars) {
+      s = s.replace(/\{(\w+)\}/g, function (_, k) {
+        return vars[k] != null ? vars[k] : "{" + k + "}";
+      });
+    }
+    return s;
+  }
+
+  function cakeCopy(id) {
+    var d = dict();
+    return (d.cakes && d.cakes[id]) ||
+      (FALLBACK.cakes && FALLBACK.cakes[id]) ||
+      { title: id, desc: "" };
+  }
+
+  function tagLabel(tag) {
+    var d = dict();
+    return (d.tagLabels && d.tagLabels[tag]) ||
+      (FALLBACK.tagLabels && FALLBACK.tagLabels[tag]) ||
+      tag;
+  }
 
   function escapeAttr(str) {
-    return String(str).replace(/"/g, "&quot;");
+    return String(str).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
   }
 
   function getCategories() {
-    var set = [ALL_FILTER];
+    var set = [];
     cakes.forEach(function (cake) {
       cake.tags.forEach(function (tag) {
         if (set.indexOf(tag) === -1) set.push(tag);
@@ -124,15 +83,90 @@
     return set;
   }
 
+  /* ---------- Application d'une langue ---------- */
+
+  function applyStaticI18n() {
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = t(el.getAttribute("data-i18n"));
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      el.innerHTML = t(el.getAttribute("data-i18n-html"));
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph")));
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria")));
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      el.setAttribute("alt", t(el.getAttribute("data-i18n-alt")));
+    });
+  }
+
+  function applyMeta() {
+    var m = dict().meta || FALLBACK.meta || {};
+    if (m.title) document.title = m.title;
+    setMeta('meta[name="description"]', "content", m.description);
+    setMeta('meta[property="og:title"]', "content", m.ogTitle);
+    setMeta('meta[property="og:description"]', "content", m.ogDescription);
+    setMeta('meta[name="twitter:title"]', "content", m.ogTitle);
+    setMeta('meta[name="twitter:description"]', "content", m.ogDescription);
+    setMeta('meta[property="og:locale"]', "content", m.ogLocale);
+    document.documentElement.setAttribute("lang", currentLang);
+  }
+
+  function setMeta(selector, attr, value) {
+    if (value == null) return;
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  }
+
+  function updateLangButtons() {
+    document.querySelectorAll("#langSwitch .lang-btn").forEach(function (btn) {
+      var active = btn.getAttribute("data-lang") === currentLang;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  function setLanguage(lang, opts) {
+    if (LANGS.indexOf(lang) === -1) lang = "fr";
+    currentLang = lang;
+    if (!opts || opts.save !== false) {
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    }
+    applyStaticI18n();
+    applyMeta();
+    renderFilters();
+    renderGallery();
+    if (carouselApi) carouselApi.render();
+    updateLangButtons();
+  }
+
+  function detectLang() {
+    // Langue par défaut : français (contenu de référence du site).
+    // On ne bascule que si le visiteur a explicitement choisi une langue,
+    // ce choix étant mémorisé pour ses prochaines visites.
+    var stored = null;
+    try { stored = localStorage.getItem(LANG_KEY); } catch (e) {}
+    if (stored && LANGS.indexOf(stored) !== -1) return stored;
+    return "fr";
+  }
+
+  function setupLangSwitch() {
+    var box = document.getElementById("langSwitch");
+    if (!box) return;
+    box.addEventListener("click", function (e) {
+      var btn = e.target.closest(".lang-btn");
+      if (!btn) return;
+      setLanguage(btn.getAttribute("data-lang"));
+    });
+  }
+
   /* ---------- Lightbox (voir les photos en entier) ---------- */
 
   var lightbox = {
-    el: null,
-    img: null,
-    caption: null,
-    list: [],
-    index: 0,
-    lastFocused: null,
+    el: null, img: null, caption: null, list: [], index: 0, lastFocused: null,
   };
 
   function openLightbox(list, index) {
@@ -169,13 +203,9 @@
     var item = lightbox.list[lightbox.index];
     if (!item) return;
     lightbox.img.src = item.img;
-    lightbox.img.alt = item.title + ", création Caliza";
+    lightbox.img.alt = item.title;
     lightbox.caption.textContent =
-      item.title +
-      "  ·  " +
-      (lightbox.index + 1) +
-      " / " +
-      lightbox.list.length;
+      item.title + "  ·  " + (lightbox.index + 1) + " / " + lightbox.list.length;
     var multiple = lightbox.list.length > 1;
     var prev = document.getElementById("lightboxPrev");
     var next = document.getElementById("lightboxNext");
@@ -210,7 +240,6 @@
       } else if (e.key === "ArrowRight") {
         lightboxGo(1);
       } else if (e.key === "Tab") {
-        // Simple focus trap within the dialog controls
         var focusables = Array.prototype.slice
           .call(lightbox.el.querySelectorAll("button"))
           .filter(function (b) { return !b.hidden; });
@@ -230,6 +259,8 @@
 
   /* ---------- Carrousel de présentation ---------- */
 
+  var carouselApi = null;
+
   function setupCarousel() {
     var root = document.getElementById("heroCarousel");
     var track = document.getElementById("heroTrack");
@@ -239,31 +270,39 @@
     var featured = cakes.filter(function (c) { return c.feature; });
     if (!featured.length) featured = cakes.slice(0, 6);
 
-    track.innerHTML = featured
-      .map(function (cake, i) {
-        return (
-          '<figure class="carousel-slide" data-index="' + i +
-          '" style="--slide-bg:url(&quot;' + cake.img + '&quot;)">' +
-          '<img src="' + cake.img + '" alt="' + escapeAttr(cake.title) +
-          ', création Caliza"' + (i === 0 ? "" : ' loading="lazy"') + ">" +
-          "<figcaption>" + cake.title + "</figcaption>" +
-          "</figure>"
-        );
-      })
-      .join("");
-
-    dotsWrap.innerHTML = featured
-      .map(function (cake, i) {
-        return (
-          '<button type="button" class="carousel-dot' + (i === 0 ? " active" : "") +
-          '" data-index="' + i + '" role="tab" aria-label="Photo ' + (i + 1) +
-          '" aria-selected="' + (i === 0 ? "true" : "false") + '"></button>'
-        );
-      })
-      .join("");
-
     var current = 0;
     var timer = null;
+
+    function render() {
+      current = 0;
+      track.innerHTML = featured
+        .map(function (cake, i) {
+          var copy = cakeCopy(cake.id);
+          return (
+            '<figure class="carousel-slide" data-index="' + i +
+            '" style="--slide-bg:url(&quot;' + cake.img + '&quot;)">' +
+            '<img src="' + cake.img + '" alt="' + escapeAttr(copy.title) + '"' +
+            (i === 0 ? "" : ' loading="lazy"') + ">" +
+            "<figcaption>" + escapeHtml(copy.title) + "</figcaption>" +
+            "</figure>"
+          );
+        })
+        .join("");
+
+      dotsWrap.innerHTML = featured
+        .map(function (cake, i) {
+          var copy = cakeCopy(cake.id);
+          return (
+            '<button type="button" class="carousel-dot' + (i === 0 ? " active" : "") +
+            '" data-index="' + i + '" role="tab" aria-label="' + escapeAttr(copy.title) +
+            '" aria-selected="' + (i === 0 ? "true" : "false") + '"></button>'
+          );
+        })
+        .join("");
+
+      track.style.transform = "translateX(0)";
+      start();
+    }
 
     function goTo(i) {
       current = (i + featured.length) % featured.length;
@@ -274,10 +313,8 @@
         d.setAttribute("aria-selected", active ? "true" : "false");
       });
     }
-
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
-
     function start() {
       if (prefersReducedMotion || featured.length < 2) return;
       stop();
@@ -299,13 +336,12 @@
       start();
     });
 
-    // Clic sur une photo -> agrandir
     track.addEventListener("click", function (e) {
       var slide = e.target.closest(".carousel-slide");
       if (!slide) return;
       var idx = parseInt(slide.getAttribute("data-index"), 10) || 0;
       var list = featured.map(function (c) {
-        return { img: c.img, title: c.title };
+        return { img: c.img, title: cakeCopy(c.id).title };
       });
       stop();
       openLightbox(list, idx);
@@ -320,11 +356,9 @@
       else if (e.key === "ArrowRight") { next(); start(); }
     });
     document.addEventListener("visibilitychange", function () {
-      if (document.hidden) stop();
-      else start();
+      if (document.hidden) stop(); else start();
     });
 
-    // Support tactile : balayage horizontal
     var startX = null;
     track.addEventListener("touchstart", function (e) {
       startX = e.touches[0].clientX;
@@ -338,8 +372,8 @@
       start();
     });
 
-    goTo(0);
-    start();
+    carouselApi = { render: render };
+    render();
   }
 
   /* ---------- Galerie d'inspiration ---------- */
@@ -347,28 +381,22 @@
   function renderFilters() {
     var container = document.getElementById("galleryFilters");
     if (!container) return;
-    var categories = getCategories();
-    container.innerHTML = categories
-      .map(function (cat, i) {
+    var cats = [ALL_FILTER].concat(getCategories());
+    if (cats.indexOf(currentFilter) === -1) currentFilter = ALL_FILTER;
+    container.innerHTML = cats
+      .map(function (cat) {
+        var label = cat === ALL_FILTER ? t("gallery.filterAll") : tagLabel(cat);
         return (
           '<button type="button" class="filter-btn' +
-          (i === 0 ? " active" : "") +
-          '" data-filter="' + escapeAttr(cat) + '">' + cat + "</button>"
+          (cat === currentFilter ? " active" : "") +
+          '" data-filter="' + escapeAttr(cat) + '">' + escapeHtml(label) + "</button>"
         );
       })
       .join("");
-
-    container.addEventListener("click", function (e) {
-      var btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-      container.querySelectorAll(".filter-btn").forEach(function (b) {
-        b.classList.toggle("active", b === btn);
-      });
-      applyFilter(btn.getAttribute("data-filter"));
-    });
   }
 
   function applyFilter(filter) {
+    currentFilter = filter;
     document.querySelectorAll(".cake-card").forEach(function (card) {
       var tags = (card.getAttribute("data-tags") || "").split("|");
       var show = filter === ALL_FILTER || tags.indexOf(filter) !== -1;
@@ -381,13 +409,20 @@
     var noteField = document.getElementById("note");
     if (inspirationField) inspirationField.value = title;
     if (noteField && !noteField.value.trim()) {
-      noteField.value =
-        "Je m'inspire de votre création « " + title + " ». " +
-        "Voici ce que j'aimerais adapter : ";
+      noteField.value = defaultPrefill(title);
     }
     var section = document.getElementById("commander");
     if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
     if (noteField) noteField.focus();
+  }
+
+  function defaultPrefill(title) {
+    var byLang = {
+      fr: "Je m'inspire de votre création « " + title + " ». Voici ce que j'aimerais adapter : ",
+      en: "I'm taking inspiration from your creation “" + title + "”. Here's what I'd like to adapt: ",
+      nl: "Ik laat me inspireren door jullie creatie “" + title + "”. Dit zou ik graag aanpassen: ",
+    };
+    return byLang[currentLang] || byLang.fr;
   }
 
   function renderGallery() {
@@ -395,52 +430,66 @@
     if (!gallery) return;
     gallery.innerHTML = cakes
       .map(function (cake) {
+        var copy = cakeCopy(cake.id);
+        var chips = cake.tags
+          .map(function (tg) { return '<span class="tag">' + escapeHtml(tagLabel(tg)) + "</span>"; })
+          .join("");
         return (
-          '<article class="cake-card" data-tags="' + cake.tags.join("|") + '">' +
+          '<article class="cake-card" data-tags="' + escapeAttr(cake.tags.join("|")) + '">' +
           '<button type="button" class="cake-visual" data-img="' + escapeAttr(cake.img) +
-          '" data-title="' + escapeAttr(cake.title) +
-          '" aria-label="Voir la photo en entier : ' + escapeAttr(cake.title) + '">' +
-          '<img src="' + cake.img + '" alt="' + escapeAttr(cake.title) +
-          ', création Caliza" loading="lazy"></button>' +
+          '" data-title="' + escapeAttr(copy.title) +
+          '" aria-label="' + escapeAttr(t("a11y.viewFull", { title: copy.title })) + '">' +
+          '<img src="' + cake.img + '" alt="' + escapeAttr(copy.title) + '" loading="lazy"></button>' +
           '<div class="cake-body">' +
-          "<h3>" + cake.title + "</h3>" +
-          "<p>" + cake.desc + "</p>" +
-          '<div class="cake-tags">' +
-          cake.tags.map(function (t) { return '<span class="tag">' + t + "</span>"; }).join("") +
-          "</div>" +
-          '<button type="button" class="cake-pick" data-title="' + escapeAttr(cake.title) +
-          '">M\'inspirer de celui-ci →</button>' +
+          "<h3>" + escapeHtml(copy.title) + "</h3>" +
+          "<p>" + escapeHtml(copy.desc) + "</p>" +
+          '<div class="cake-tags">' + chips + "</div>" +
+          '<button type="button" class="cake-pick" data-title="' + escapeAttr(copy.title) +
+          '">' + escapeHtml(t("gallery.pick")) + "</button>" +
           "</div>" +
           "</article>"
         );
       })
       .join("");
+    applyFilter(currentFilter);
+  }
 
-    gallery.addEventListener("click", function (e) {
-      var pick = e.target.closest(".cake-pick");
-      if (pick) {
-        fillInspiration(pick.getAttribute("data-title"));
-        return;
-      }
-      var visual = e.target.closest(".cake-visual");
-      if (visual) {
-        var visibleCards = Array.prototype.slice.call(
-          gallery.querySelectorAll(".cake-card")
-        ).filter(function (c) { return !c.classList.contains("hidden"); });
-        var list = visibleCards.map(function (card) {
-          var v = card.querySelector(".cake-visual");
-          return {
-            img: v.getAttribute("data-img"),
-            title: v.getAttribute("data-title"),
-          };
+  function setupGalleryEvents() {
+    var gallery = document.getElementById("gallery");
+    var filters = document.getElementById("galleryFilters");
+
+    if (filters) {
+      filters.addEventListener("click", function (e) {
+        var btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        filters.querySelectorAll(".filter-btn").forEach(function (b) {
+          b.classList.toggle("active", b === btn);
         });
-        var startIndex = Math.max(
-          0,
-          visibleCards.indexOf(visual.closest(".cake-card"))
-        );
-        openLightbox(list, startIndex);
-      }
-    });
+        applyFilter(btn.getAttribute("data-filter"));
+      });
+    }
+
+    if (gallery) {
+      gallery.addEventListener("click", function (e) {
+        var pick = e.target.closest(".cake-pick");
+        if (pick) {
+          fillInspiration(pick.getAttribute("data-title"));
+          return;
+        }
+        var visual = e.target.closest(".cake-visual");
+        if (visual) {
+          var visibleCards = Array.prototype.slice
+            .call(gallery.querySelectorAll(".cake-card"))
+            .filter(function (c) { return !c.classList.contains("hidden"); });
+          var list = visibleCards.map(function (card) {
+            var v = card.querySelector(".cake-visual");
+            return { img: v.getAttribute("data-img"), title: v.getAttribute("data-title") };
+          });
+          var startIndex = Math.max(0, visibleCards.indexOf(visual.closest(".cake-card")));
+          openLightbox(list, startIndex);
+        }
+      });
+    }
   }
 
   /* ---------- Navigation mobile ---------- */
@@ -461,9 +510,11 @@
     });
   }
 
-  /* ---------- Formulaire de commande ---------- */
+  /* ---------- Formulaire de commande ----------
+     Le message envoyé à Caliza reste toujours en français, quelle que soit
+     la langue d'affichage, pour qu'elle le lise de la même manière. */
 
-  function eventLabel(data) {
+  function eventLabelFr(data) {
     if (data.eventType === "Autre occasion" && data.eventOther) {
       return "Autre occasion — " + data.eventOther;
     }
@@ -476,7 +527,7 @@
       "",
       "Nom : " + data.name,
       "Téléphone : " + data.phone,
-      "Type d'événement : " + eventLabel(data),
+      "Type d'événement : " + eventLabelFr(data),
       "Date souhaitée : " + (data.date || "à préciser"),
       "Nombre de parts : " + (data.servings || "à préciser"),
       "Forme souhaitée : " + (data.shape || "à discuter"),
@@ -486,9 +537,7 @@
       "Mode de retrait : " + (data.fulfilment || "-"),
     ];
     if (data.fulfilment === "Livraison souhaitée") {
-      lines.push(
-        "Adresse de livraison : " + (data.address || "à communiquer")
-      );
+      lines.push("Adresse de livraison : " + (data.address || "à communiquer"));
     }
     lines.push("Allergies / régimes : " + (data.allergies || "aucune signalée"));
     if (data.cakeText) lines.push("Texte sur le gâteau : " + data.cakeText);
@@ -502,8 +551,7 @@
     var eventOtherField = document.getElementById("eventOtherField");
     if (eventType && eventOtherField) {
       var syncEventOther = function () {
-        var show = eventType.value === "Autre occasion";
-        eventOtherField.classList.toggle("hidden", !show);
+        eventOtherField.classList.toggle("hidden", eventType.value !== "Autre occasion");
       };
       eventType.addEventListener("change", syncEventOther);
       syncEventOther();
@@ -514,10 +562,7 @@
     if (group && addressField) {
       group.addEventListener("change", function (e) {
         if (e.target.name !== "fulfilment") return;
-        addressField.classList.toggle(
-          "hidden",
-          e.target.value !== "Livraison souhaitée"
-        );
+        addressField.classList.toggle("hidden", e.target.value !== "Livraison souhaitée");
       });
     }
   }
@@ -535,27 +580,23 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       var data = Object.fromEntries(new FormData(form).entries());
-
       if (!data.name || !data.phone || !data.note) {
         form.reportValidity();
         return;
       }
-
       var message = buildMessage(data);
-
       if (lastChannel === "email") {
         var subject = "Demande de devis : " + data.name;
-        var url =
+        window.location.href =
           "mailto:" + EMAIL_ADDRESS +
           "?subject=" + encodeURIComponent(subject) +
           "&body=" + encodeURIComponent(message);
-        window.location.href = url;
       } else {
-        var waUrl =
-          "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-        window.open(waUrl, "_blank", "noopener");
+        window.open(
+          "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
+          "_blank", "noopener"
+        );
       }
     });
   }
@@ -565,14 +606,23 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    currentLang = detectLang();
     setupLightbox();
+    setupGalleryEvents();
     setupCarousel();
-    renderGallery();
-    renderFilters();
     setupNav();
+    setupLangSwitch();
     setupForm();
     setupConditionalFields();
     setYear();
+    setLanguage(currentLang, { save: false });
   });
 })();
