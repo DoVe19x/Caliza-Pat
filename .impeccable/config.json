@@ -38,6 +38,45 @@
         ],
         "createdAt": "2026-09-09T21:44:23.721Z",
         "reason": "Flagged text is short uppercase labels (eyebrow, gallery count, contact labels), not body passages; tied to the incumbent eyebrow system."
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "atelier.html"
+        ],
+        "createdAt": "2026-09-09T22:18:21.310Z",
+        "reason": "User chose 'Clair papier' over 'Sombre chaud' and 'Coloré assumé' in a 3-option menu; warm-paper editorial is the pinned direction for this redesign."
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "atelier.html"
+        ],
+        "createdAt": "2026-09-09T22:18:21.329Z",
+        "reason": "body{overflow-x:clip} horizontal-scroll guard; sticky masthead verified (position:sticky holds) and no popovers escape body."
+      },
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "createdAt": "2026-09-09T22:18:21.343Z",
+        "reason": "User picked 'Fraunces + Inter Tight' explicitly from a 3-option type menu that included a sober alternative (Newsreader / Bricolage Grotesque)."
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-09T22:18:21.356Z",
+        "reason": "Paired with Fraunces per the user's explicit type choice; Inter Tight is the UI/body face for the pinned editorial direction."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "atelier.html"
+        ],
+        "createdAt": "2026-09-09T22:19:41.216Z",
+        "reason": "order-info is a 3-column spec block divided by hairline rules (core device of the chosen broadsheet-editorial world); items carry generous 32x38px padding — not cramped by inspection."
       }
     ]
   }
