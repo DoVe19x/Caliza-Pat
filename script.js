@@ -1,6 +1,9 @@
 (function () {
   "use strict";
 
+  // Marque le document : active la révélation au défilement (CSS .js .cake-card).
+  document.documentElement.classList.add("js");
+
   var WHATSAPP_NUMBER = "32470841257";
   var EMAIL_ADDRESS = "caliza-pat@hotmail.com";
   var LANG_KEY = "caliza-lang";
@@ -16,19 +19,35 @@
   // Ordre = ordre d'affichage dans la galerie. Le nouveau gâteau de mariage
   // est la 1re photo (photo de présentation principale du carrousel).
   var cakes = [
+    { id: "mer-coquillages", img: "assets/gateaux/mer-coquillages.jpg", tags: ["Mariage", "Chic"], feature: true },
     { id: "mariage-el", img: "assets/gateaux/mariage-e-l-roses.jpg", tags: ["Mariage", "Chic"], feature: true },
-    { id: "coeur-fruits-rouges", img: "assets/gateaux/coeur-fruits-rouges.jpg", tags: ["Anniversaire", "Fruité"], feature: true },
-    { id: "drip-macarons", img: "assets/gateaux/drip-macarons.jpg", tags: ["Anniversaire", "Chic"], feature: true },
+    { id: "coeur-fraises-framboises", img: "assets/gateaux/coeur-fraises-framboises.jpg", tags: ["Anniversaire", "Fruité", "Mariage"], feature: true },
+    { id: "prairie-fleurie", img: "assets/gateaux/prairie-fleurie.jpg", tags: ["Anniversaire", "Chic"], feature: true },
+    { id: "lettre-s-fruits", img: "assets/gateaux/lettre-s-fruits.jpg", tags: ["Lettres & chiffres", "Fruité"], feature: true },
+    { id: "eventail", img: "assets/gateaux/eventail-roses-rouges.jpg", tags: ["Chic", "Mariage"], feature: true },
+    { id: "piece-75", img: "assets/gateaux/75-ans-macarons.jpg", tags: ["Anniversaire", "Chic"], feature: true },
+    { id: "mariage-mrmrs-etages", img: "assets/gateaux/mariage-mrmrs-etages.jpg", tags: ["Mariage", "Chic"] },
+    { id: "jack-daniels-50", img: "assets/gateaux/jack-daniels-50.jpg", tags: ["Anniversaire"] },
+    { id: "buche-noel-chocolat", img: "assets/gateaux/buche-noel-chocolat.jpg", tags: ["Fêtes", "Chocolat"], feature: true },
+    { id: "blanc-fraises-chocolat", img: "assets/gateaux/blanc-fraises-chocolat.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "lettre-n-fruits", img: "assets/gateaux/lettre-n-fruits.jpg", tags: ["Lettres & chiffres", "Fruité"] },
+    { id: "drip-macarons", img: "assets/gateaux/drip-macarons.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "bouquet", img: "assets/gateaux/bouquet-fleuri.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "coeur-fruits-rouges", img: "assets/gateaux/coeur-fruits-rouges.jpg", tags: ["Anniversaire", "Fruité"] },
+    { id: "buche-framboise-glacee", img: "assets/gateaux/buche-framboise-glacee.jpg", tags: ["Chic", "Fruité"] },
+    { id: "meringues-roses", img: "assets/gateaux/meringues-roses.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "mauve-fruits-rouges", img: "assets/gateaux/mauve-fruits-rouges.jpg", tags: ["Anniversaire", "Fruité", "Chic"] },
+    { id: "drip-bonbons", img: "assets/gateaux/drip-bonbons.jpg", tags: ["Enfants", "Anniversaire"] },
+    { id: "blanc-rose", img: "assets/gateaux/blanc-rose-noeuds.jpg", tags: ["Anniversaire", "Chic"] },
     { id: "lettre-m", img: "assets/gateaux/lettre-m-fruits.jpg", tags: ["Lettres & chiffres", "Fruité"] },
     { id: "chiffre-chocolat", img: "assets/gateaux/chiffre-chocolat.jpg", tags: ["Anniversaire", "Chocolat", "Lettres & chiffres"], feature: true },
     { id: "lettre-s", img: "assets/gateaux/lettre-s-chantilly.jpg", tags: ["Lettres & chiffres", "Chocolat"] },
-    { id: "piece-75", img: "assets/gateaux/75-ans-macarons.jpg", tags: ["Anniversaire", "Chic"], feature: true },
-    { id: "meringues-roses", img: "assets/gateaux/meringues-roses.jpg", tags: ["Anniversaire", "Chic"] },
-    { id: "blanc-rose", img: "assets/gateaux/blanc-rose-noeuds.jpg", tags: ["Anniversaire", "Chic"] },
-    { id: "eventail", img: "assets/gateaux/eventail-roses-rouges.jpg", tags: ["Chic", "Mariage"], feature: true },
     { id: "coeur-fraises", img: "assets/gateaux/coeur-fraises-fleurs.jpg", tags: ["Anniversaire", "Fruité"] },
-    { id: "mariage-mrmrs", img: "assets/gateaux/mariage-coeur.jpg", tags: ["Mariage", "Fruité"], feature: true },
-    { id: "bouquet", img: "assets/gateaux/bouquet-fleuri.jpg", tags: ["Anniversaire", "Chic"] },
+    { id: "mariage-mrmrs", img: "assets/gateaux/mariage-coeur.jpg", tags: ["Mariage", "Fruité"] },
+    { id: "reine-des-neiges", img: "assets/gateaux/reine-des-neiges.jpg", tags: ["Enfants"] },
+    { id: "cheval-portrait", img: "assets/gateaux/cheval-portrait.jpg", tags: ["Enfants", "Anniversaire"] },
+    { id: "sonic", img: "assets/gateaux/sonic.jpg", tags: ["Enfants"] },
+    { id: "stitch", img: "assets/gateaux/stitch.jpg", tags: ["Enfants"] },
     { id: "gateau-nu", img: "assets/gateaux/gateau-nu-chocolat.jpg", tags: ["Chocolat", "Anniversaire"] },
     { id: "buche", img: "assets/gateaux/buche-chocolat.jpg", tags: ["Chocolat", "Fêtes"] },
   ];
@@ -405,6 +424,19 @@
       var show = filter === ALL_FILTER || tags.indexOf(filter) !== -1;
       card.classList.toggle("hidden", !show);
     });
+    updateGalleryCount();
+  }
+
+  function updateGalleryCount() {
+    var el = document.getElementById("galleryCount");
+    if (!el) return;
+    var total = cakes.length;
+    if (currentFilter === ALL_FILTER) {
+      el.textContent = t("gallery.countAll", { total: total });
+    } else {
+      var visible = document.querySelectorAll(".cake-card:not(.hidden)").length;
+      el.textContent = t("gallery.countFiltered", { n: visible, total: total });
+    }
   }
 
   function fillInspiration(title) {
@@ -442,7 +474,7 @@
           '<button type="button" class="cake-visual" data-img="' + escapeAttr(cake.img) +
           '" data-title="' + escapeAttr(copy.title) +
           '" aria-label="' + escapeAttr(t("a11y.viewFull", { title: copy.title })) + '">' +
-          '<img src="' + cake.img + '" alt="' + escapeAttr(copy.title) + '" loading="lazy"></button>' +
+          '<img src="' + cake.img + '" alt="' + escapeAttr(copy.title) + '" loading="lazy" decoding="async"></button>' +
           '<div class="cake-body">' +
           "<h3>" + escapeHtml(copy.title) + "</h3>" +
           "<p>" + escapeHtml(copy.desc) + "</p>" +
@@ -455,6 +487,7 @@
       })
       .join("");
     applyFilter(currentFilter);
+    revealCards();
   }
 
   function setupGalleryEvents() {
@@ -609,6 +642,61 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------- Révélation au défilement (un seul mouvement) ---------- */
+
+  var revealSupported =
+    !prefersReducedMotion && "IntersectionObserver" in window;
+
+  var revealObserver = revealSupported
+    ? new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-in");
+              revealObserver.unobserve(e.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+      )
+    : null;
+
+  // Révèle (ou observe) les cartes de la galerie.
+  // L'animation ne joue qu'au premier rendu ; un changement de langue
+  // réaffiche les cartes immédiatement, sans re-fondu.
+  var galleryRevealed = false;
+  function revealCards() {
+    var cards = document.querySelectorAll("#gallery .cake-card");
+    if (!revealObserver || galleryRevealed) {
+      cards.forEach(function (el) { el.classList.add("is-in"); });
+      galleryRevealed = true;
+      return;
+    }
+    cards.forEach(function (el) { revealObserver.observe(el); });
+    galleryRevealed = true;
+  }
+
+  function setupReveal() {
+    var marks = document.querySelectorAll(
+      ".section-title, .section-lede, .order-info, .order-form, .about-deco, .contact-card, .map-embed, .gallery-count"
+    );
+    if (!revealObserver) {
+      marks.forEach(function (el) { el.classList.add("is-in"); });
+      return;
+    }
+    marks.forEach(function (el) {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+
+    // Filet de sécurité : tout révéler après 3 s si l'observer reste muet.
+    window.setTimeout(function () {
+      document
+        .querySelectorAll(".reveal:not(.is-in), #gallery .cake-card:not(.is-in)")
+        .forEach(function (el) { el.classList.add("is-in"); });
+    }, 3000);
+  }
+
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, "&amp;")
@@ -627,5 +715,6 @@
     setupConditionalFields();
     setYear();
     setLanguage(currentLang, { save: false });
+    setupReveal();
   });
 })();

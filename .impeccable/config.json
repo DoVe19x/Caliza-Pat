@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-09T21:44:23.679Z",
+        "reason": "Caliza is an artisan pâtisserie; the warm cream + rose/terracotta palette is the incumbent brand world, appropriate to buttercream/craft and approved across prior sessions."
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-09T21:44:23.696Z",
+        "reason": "body{overflow-x:clip} is a deliberate horizontal-scroll guard; sticky header verified working (top:0 after scroll) at 1280/500/390 and no popovers escape body."
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-09T21:44:23.709Z",
+        "reason": "Section eyebrow label is the incumbent, site-wide pattern; removing it is a redesign, out of scope for this polish/refinement pass."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-09T21:44:23.721Z",
+        "reason": "Flagged text is short uppercase labels (eyebrow, gallery count, contact labels), not body passages; tied to the incumbent eyebrow system."
+      }
+    ]
+  }
+}

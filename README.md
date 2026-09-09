@@ -45,5 +45,6 @@ URL publique : `https://dove19x.github.io/Caliza-Pat/`
 ## Mise à jour du contenu
 
 - Textes : `i18n.js` (les 3 langues) ; la clé se trouve dans `index.html` (`data-i18n`).
-- Galerie de gâteaux : photos dans `script.js` (tableau `cakes`), titres/descriptions dans `i18n.js` (`cakes`).
+- Galerie de gâteaux : photos dans `script.js` (tableau `cakes`, `feature: true` = visible dans le carrousel), titres/descriptions dans `i18n.js` (`cakes`). Les tags (`Anniversaire`, `Mariage`, `Enfants`…) restent en français canonique ; leur libellé traduit est dans `i18n.js` (`tagLabels`). Le compteur « N créations » et la révélation au défilement sont automatiques.
+- Photos sources : dossiers `photos gateaux/` et `Nouvelles photos gâteaux/` (non utilisées telles quelles ; les versions optimisées sont dans `assets/gateaux/`).
 - Coordonnées / n° WhatsApp : `script.js` (`WHATSAPP_NUMBER`, `EMAIL_ADDRESS`) et `index.html`.

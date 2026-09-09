@@ -13,3 +13,7 @@
 # Logs / divers
 *.log
 node_modules/
+
+# Photos sources (non optimisées) — seules les versions dans assets/ sont versionnées
+Nouvelles photos gâteaux/
+

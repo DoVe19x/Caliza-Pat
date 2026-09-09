@@ -58,6 +58,8 @@
           "Voici quelques styles de créations possibles chez Caliza. Cliquez sur une photo pour la voir en entier, ou sur « M'inspirer de celui-ci » pour pré-remplir votre note de commande. Vous pourrez ensuite l'adapter à vos goûts, vos couleurs et vos saveurs.",
         "gallery.pick": "M'inspirer de celui-ci →",
         "gallery.filterAll": "Tous",
+        "gallery.countAll": "{total} créations",
+        "gallery.countFiltered": "{n} sur {total} créations",
 
         "order.eyebrow": "Votre commande",
         "order.title": "Décrivez le gâteau de vos rêves",
@@ -176,6 +178,7 @@
         "Chocolat": "Chocolat",
         "Mariage": "Mariage",
         "Fêtes": "Fêtes",
+        "Enfants": "Enfants",
       },
       cakes: {
         "mariage-el": {
@@ -238,6 +241,70 @@
           title: "Bûche au chocolat croustillant",
           desc: "Biscuit croquant, mousse chocolat et enrobage chocolat-noisette. Un classique revisité pour les fêtes.",
         },
+        "mer-coquillages": {
+          title: "Mer & coquillages",
+          desc: "Deux étages en dégradé de bleu, coquillages et étoiles de mer en chocolat blanc, petit phare et tortue. Une pièce de fête façon bord de mer.",
+        },
+        "lettre-s-fruits": {
+          title: "Lettre « S » aux fruits rouges",
+          desc: "Génoise et chantilly, fraises, framboises, mûres et fleurs comestibles. Une lettre ou une initiale gourmande et fraîche.",
+        },
+        "lettre-n-fruits": {
+          title: "Lettre « N » fruits & macarons",
+          desc: "Sablé, crème vanille, fraises, myrtilles, mûres et macarons. Parfaite pour une initiale ou un âge.",
+        },
+        "mariage-mrmrs-etages": {
+          title: "Pièce montée « Mr & Mrs »",
+          desc: "Trois hauteurs en crème au beurre texturée, roses fraîches et cake topper doré. Sobre et élégante pour un mariage.",
+        },
+        "coeur-fraises-framboises": {
+          title: "Cœur fraises & framboises",
+          desc: "Crème onctueuse, fraises et framboises fraîches, meringues et cœurs en chocolat. Une pièce romantique et généreuse.",
+        },
+        "blanc-fraises-chocolat": {
+          title: "Blanc, fraises au chocolat",
+          desc: "Crème au beurre vanille, fraises enrobées de chocolat, rosaces et cœurs dorés. Chic pour un anniversaire ou des fiançailles.",
+        },
+        "prairie-fleurie": {
+          title: "Prairie fleurie",
+          desc: "Cake lettres façon prairie : herbes en crème, gerberas, roses et fleurs des champs. Un décor printanier plein de couleurs.",
+        },
+        "jack-daniels-50": {
+          title: "Pièce « Jack Daniel's, 50 ans »",
+          desc: "Étiquette et bouteilles reproduites en sucre, sphères dorées et effet glaçons. Un anniversaire marquant sur le thème whisky.",
+        },
+        "buche-framboise-glacee": {
+          title: "Entremets glacé framboise",
+          desc: "Bûche glacée nappée de velours blanc, cœur framboise et pensée cristallisée. Fraîcheur et finesse en fin de repas.",
+        },
+        "buche-noel-chocolat": {
+          title: "Bûche de Noël chocolat & or",
+          desc: "Biscuit et mousse chocolat, enrobage façon écorce et éclats d'or. Le grand classique des fêtes, revisité.",
+        },
+        "drip-bonbons": {
+          title: "Drip cake bonbons",
+          desc: "Coulure pastel, sucettes arc-en-ciel, guimauves et bonbons à volonté. La pièce qui fait briller les yeux des enfants.",
+        },
+        "mauve-fruits-rouges": {
+          title: "Layer cake mauve & fruits rouges",
+          desc: "Crème au beurre mauve travaillée à la poche, fraises et framboises fraîches, meringues et éclats d'or.",
+        },
+        "cheval-portrait": {
+          title: "Gâteau portrait cheval",
+          desc: "Impression comestible haute définition sur crème au beurre lisse. Idéal pour les passionnés d'équitation.",
+        },
+        "reine-des-neiges": {
+          title: "Reine des Neiges",
+          desc: "Impression Elsa, flocons en sucre et crème pastel bleu et rose. Un décor féérique pour les petites fans.",
+        },
+        "sonic": {
+          title: "Sonic",
+          desc: "Crème au beurre bleue, figurine Sonic et anneau doré, éclats d'étoiles. Un anniversaire qui file à toute vitesse.",
+        },
+        "stitch": {
+          title: "Stitch, ambiance tropicale",
+          desc: "Crème au beurre rose, Stitch, palmier et feuillage en sucre. Un décor Lilo & Stitch tout en douceur.",
+        },
       },
     },
 
@@ -291,6 +358,8 @@
           "A few styles of creations that are possible at Caliza. Click a photo to see it in full, or click “Use this as inspiration” to pre-fill your order note. You can then adapt it to your tastes, colours and flavours.",
         "gallery.pick": "Use this as inspiration →",
         "gallery.filterAll": "All",
+        "gallery.countAll": "{total} creations",
+        "gallery.countFiltered": "{n} of {total} creations",
 
         "order.eyebrow": "Your order",
         "order.title": "Describe the cake of your dreams",
@@ -409,6 +478,7 @@
         "Chocolat": "Chocolate",
         "Mariage": "Wedding",
         "Fêtes": "Festive",
+        "Enfants": "Kids",
       },
       cakes: {
         "mariage-el": {
@@ -471,6 +541,70 @@
           title: "Crunchy chocolate yule log",
           desc: "Crunchy biscuit, chocolate mousse and chocolate-hazelnut coating. A classic with a twist for the holidays.",
         },
+        "mer-coquillages": {
+          title: "Sea & seashells",
+          desc: "Two tiers in a blue ombré, white-chocolate shells and starfish, a little lighthouse and turtle. A seaside-themed celebration piece.",
+        },
+        "lettre-s-fruits": {
+          title: "“S” letter cake with red berries",
+          desc: "Sponge and whipped cream, strawberries, raspberries, blackberries and edible flowers. A fresh, indulgent letter or initial.",
+        },
+        "lettre-n-fruits": {
+          title: "“N” letter cake, berries & macarons",
+          desc: "Shortbread, vanilla cream, strawberries, blueberries, blackberries and macarons. Perfect for an initial or an age.",
+        },
+        "mariage-mrmrs-etages": {
+          title: "“Mr & Mrs” tiered cake",
+          desc: "Three tiers of textured buttercream, fresh roses and a gold cake topper. Understated and elegant for a wedding.",
+        },
+        "coeur-fraises-framboises": {
+          title: "Heart with strawberries & raspberries",
+          desc: "Smooth cream, fresh strawberries and raspberries, meringues and chocolate hearts. A romantic, generous piece.",
+        },
+        "blanc-fraises-chocolat": {
+          title: "White, chocolate-dipped strawberries",
+          desc: "Vanilla buttercream, chocolate-dipped strawberries, rosettes and gold hearts. Elegant for a birthday or an engagement.",
+        },
+        "prairie-fleurie": {
+          title: "Flower meadow",
+          desc: "A meadow-style letter cake: piped grass, gerberas, roses and wild flowers. A spring decor full of colour.",
+        },
+        "jack-daniels-50": {
+          title: "“Jack Daniel's, 50th” cake",
+          desc: "Sugar-made label and bottles, gold spheres and an ice-cube effect. A milestone birthday on a whiskey theme.",
+        },
+        "buche-framboise-glacee": {
+          title: "Frozen raspberry entremets",
+          desc: "An iced log coated in white velvet, a raspberry heart and a crystallised pansy. Fresh and refined to finish a meal.",
+        },
+        "buche-noel-chocolat": {
+          title: "Chocolate & gold yule log",
+          desc: "Chocolate sponge and mousse, a bark-style coating and gold flecks. The holiday classic, revisited.",
+        },
+        "drip-bonbons": {
+          title: "Candy drip cake",
+          desc: "Pastel drip, rainbow lollipops, marshmallows and all the sweets. The piece that makes children's eyes light up.",
+        },
+        "mauve-fruits-rouges": {
+          title: "Mauve layer cake with red berries",
+          desc: "Piped mauve buttercream, fresh strawberries and raspberries, meringues and gold flecks.",
+        },
+        "cheval-portrait": {
+          title: "Horse portrait cake",
+          desc: "A high-definition edible print on smooth buttercream. Ideal for horse-riding enthusiasts.",
+        },
+        "reine-des-neiges": {
+          title: "Frozen",
+          desc: "An Elsa print, sugar snowflakes and pastel blue-and-pink cream. A magical decor for little fans.",
+        },
+        "sonic": {
+          title: "Sonic",
+          desc: "Blue buttercream, a Sonic figure and gold ring, star confetti. A birthday at full speed.",
+        },
+        "stitch": {
+          title: "Stitch, tropical vibe",
+          desc: "Pink buttercream, Stitch, a palm tree and sugar foliage. A gentle Lilo & Stitch decor.",
+        },
       },
     },
 
@@ -524,6 +658,8 @@
           "Enkele stijlen van creaties die mogelijk zijn bij Caliza. Klik op een foto om ze volledig te bekijken, of op “Als inspiratie gebruiken” om je bestelnota vooraf in te vullen. Daarna pas je alles aan naar je smaak, kleuren en smaken.",
         "gallery.pick": "Als inspiratie gebruiken →",
         "gallery.filterAll": "Alle",
+        "gallery.countAll": "{total} creaties",
+        "gallery.countFiltered": "{n} van {total} creaties",
 
         "order.eyebrow": "Je bestelling",
         "order.title": "Beschrijf de taart van je dromen",
@@ -642,6 +778,7 @@
         "Chocolat": "Chocolade",
         "Mariage": "Bruiloft",
         "Fêtes": "Feestdagen",
+        "Enfants": "Kinderen",
       },
       cakes: {
         "mariage-el": {
@@ -703,6 +840,70 @@
         "buche": {
           title: "Knapperige chocoladekerststronk",
           desc: "Knapperige biscuit, chocolademousse en een laagje chocolade-hazelnoot. Een klassieker in een nieuw jasje voor de feestdagen.",
+        },
+        "mer-coquillages": {
+          title: "Zee & schelpen",
+          desc: "Twee verdiepingen in blauw kleurverloop, schelpen en zeesterren van witte chocolade, een vuurtorentje en schildpad. Een feeststuk in zeethema.",
+        },
+        "lettre-s-fruits": {
+          title: "Lettertaart “S” met rode vruchten",
+          desc: "Biscuit en slagroom, aardbeien, frambozen, bramen en eetbare bloemen. Een frisse, gulle letter of initiaal.",
+        },
+        "lettre-n-fruits": {
+          title: "Lettertaart “N”, vruchten & macarons",
+          desc: "Zandkoek, vanillecrème, aardbeien, bosbessen, bramen en macarons. Perfect voor een initiaal of een leeftijd.",
+        },
+        "mariage-mrmrs-etages": {
+          title: "Bruiloftstaart “Mr & Mrs”",
+          desc: "Drie verdiepingen in getextureerde botercrème, verse rozen en een gouden cake topper. Sober en elegant voor een bruiloft.",
+        },
+        "coeur-fraises-framboises": {
+          title: "Hart met aardbeien & frambozen",
+          desc: "Zachte crème, verse aardbeien en frambozen, meringues en chocoladeharten. Een romantisch, gul stuk.",
+        },
+        "blanc-fraises-chocolat": {
+          title: "Wit, aardbeien met chocolade",
+          desc: "Vanillebotercrème, met chocolade omhulde aardbeien, rozetten en gouden hartjes. Chic voor een verjaardag of een verloving.",
+        },
+        "prairie-fleurie": {
+          title: "Bloemenweide",
+          desc: "Een lettertaart in weidestijl: gespoten gras, gerbera's, rozen en veldbloemen. Een lentedecor vol kleur.",
+        },
+        "jack-daniels-50": {
+          title: "Taart “Jack Daniel's, 50 jaar”",
+          desc: "Etiket en flessen nagemaakt in suiker, gouden bollen en een ijsblokjeseffect. Een bijzondere verjaardag met whiskythema.",
+        },
+        "buche-framboise-glacee": {
+          title: "IJsentremets met framboos",
+          desc: "Een ijsstronk met wit fluweelglazuur, een frambozenhart en een gekristalliseerd viooltje. Fris en verfijnd als afsluiter.",
+        },
+        "buche-noel-chocolat": {
+          title: "Kerststronk chocolade & goud",
+          desc: "Chocoladebiscuit en -mousse, een schorsafwerking en goudschilfers. De kerstklassieker in een nieuw jasje.",
+        },
+        "drip-bonbons": {
+          title: "Drip cake met snoep",
+          desc: "Pastelkleurig druipsel, regenboogsucettes, marshmallows en snoep in overvloed. Het stuk waar kinderen van gaan stralen.",
+        },
+        "mauve-fruits-rouges": {
+          title: "Mauve layer cake met rode vruchten",
+          desc: "Gespoten mauve botercrème, verse aardbeien en frambozen, meringues en goudschilfers.",
+        },
+        "cheval-portrait": {
+          title: "Portrettaart paard",
+          desc: "Een hogeresolutie eetbare print op gladde botercrème. Ideaal voor paardenliefhebbers.",
+        },
+        "reine-des-neiges": {
+          title: "Frozen",
+          desc: "Een Elsa-print, suikeren sneeuwvlokken en pastelblauwe en -roze crème. Een sprookjesachtig decor voor kleine fans.",
+        },
+        "sonic": {
+          title: "Sonic",
+          desc: "Blauwe botercrème, een Sonic-figuurtje en gouden ring, sterrenconfetti. Een verjaardag op topsnelheid.",
+        },
+        "stitch": {
+          title: "Stitch, tropische sfeer",
+          desc: "Roze botercrème, Stitch, een palmboom en suikeren gebladerte. Een zacht Lilo & Stitch-decor.",
         },
       },
     },
