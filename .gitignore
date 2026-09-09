@@ -17,3 +17,11 @@ node_modules/
 # Photos sources (non optimisées) — seules les versions dans assets/ sont versionnées
 Nouvelles photos gâteaux/
 
+# Artefacts impeccable (on garde config.json, pas les captures/mocks)
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/build/
+
+# Doublons créés par l'éditeur
+index copy [0-9]*.html
+
