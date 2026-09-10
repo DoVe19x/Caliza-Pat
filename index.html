@@ -135,11 +135,18 @@
         commande. Vous pourrez ensuite l'adapter à vos goûts, vos couleurs et vos saveurs.
       </p>
 
-      <div class="gallery-filters" id="galleryFilters" role="group" data-i18n-aria="a11y.filterGroup" aria-label="Filtrer les inspirations"></div>
-      <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
+      <button type="button" class="gallery-toggle" data-gallery-toggle aria-expanded="true" aria-controls="galleryPanel">
+        <span class="gallery-toggle-label">Réduire la galerie</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
 
-      <div class="gallery" id="gallery">
-        <!-- Cards injected by script.js -->
+      <div id="galleryPanel">
+        <div class="gallery-filters" id="galleryFilters" role="group" data-i18n-aria="a11y.filterGroup" aria-label="Filtrer les inspirations"></div>
+        <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
+
+        <div class="gallery" id="gallery">
+          <!-- Cards injected by script.js -->
+        </div>
       </div>
     </div>
   </section>

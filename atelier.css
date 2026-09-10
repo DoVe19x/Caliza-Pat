@@ -160,6 +160,10 @@ ul,ol{list-style:none}
   background-image:var(--slide-bg);background-size:cover;background-position:center;
   filter:blur(34px) brightness(.86) saturate(1.06);transform:scale(1.25);
 }
+.carousel-slide::after{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  box-shadow:inset 0 0 0 1px var(--rule);
+}
 .carousel-slide img{
   position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;
   filter:saturate(1.05) contrast(1.02);
@@ -198,6 +202,19 @@ ul,ol{list-style:none}
 .section-lede{
   margin-top:18px;max-width:52ch;font-size:17px;line-height:1.55;color:var(--ink-70);
 }
+
+/* Repli de la galerie */
+.gallery-toggle{
+  display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+  background:none;border:none;padding:4px 0;
+  font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);
+  border-bottom:1px solid var(--sienna);cursor:pointer;
+  -webkit-appearance:none;appearance:none;transition:color .15s ease;
+}
+.gallery-toggle:hover{color:var(--sienna)}
+.gallery-toggle svg{width:13px;height:13px;transition:transform .25s var(--ease)}
+.gallery-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+#galleryPanel[hidden]{display:none}
 
 /* ---------- Galerie : index numéroté ---------- */
 .index-bar{
@@ -296,7 +313,7 @@ label,.field-legend{
 }
 .optional{font-weight:400;color:var(--ink-45)}
 .field-hint{font-size:12px;line-height:1.4;color:var(--ink-45)}
-input,select,textarea{
+input:not([type=radio]):not([type=checkbox]),select,textarea{
   font-family:inherit;font-size:16px;line-height:1.4;color:var(--ink);
   background:transparent;border:none;border-bottom:1px solid var(--rule-strong);
   border-radius:0;padding:9px 0;width:100%;max-width:100%;
@@ -305,6 +322,9 @@ input,select,textarea{
 input:not([type=radio]):not([type=checkbox]):focus,select:focus,textarea:focus{
   outline:none;border-bottom-color:var(--sienna);box-shadow:0 1px 0 0 var(--sienna);
 }
+input[type=date]{color:var(--ink-70)}
+input[type=date]::-webkit-datetime-edit{color:var(--ink-70)}
+input[type=date]::-webkit-calendar-picker-indicator{opacity:.55;cursor:pointer}
 select{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23211c16' stroke-width='1.4' stroke-linecap='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 2px center;padding-right:24px;
@@ -360,16 +380,40 @@ textarea:focus{border-color:var(--sienna);box-shadow:none}
   font-family:'Fraunces',Georgia,serif;font-size:13px;color:var(--sienna);font-variant-numeric:tabular-nums;
 }
 .map-embed{
-  grid-column:1/-1;margin-top:clamp(32px,5vw,56px);
-  border:1px solid var(--rule);overflow:hidden;
+  grid-column:1/-1;margin-top:clamp(32px,5vw,56px);position:relative;
+  border:1px solid var(--rule);overflow:hidden;background:var(--paper-2);min-height:200px;
 }
-.map-embed iframe{width:100%;height:340px;border:0;display:block;filter:grayscale(.18) contrast(.97)}
+.map-embed iframe{position:relative;z-index:1;width:100%;height:340px;border:0;display:block;filter:grayscale(.18) contrast(.97)}
+.map-fallback{
+  position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:20px;font-size:14px;font-weight:500;color:var(--ink-70);
+  text-decoration:underline;text-underline-offset:3px;
+}
 .social-link{
   display:inline-flex;align-items:center;gap:8px;
   font-size:14px;font-weight:500;color:var(--ink);transition:color .15s ease;
 }
 .social-link svg{width:18px;height:18px;fill:currentColor}
 .social-link:hover{color:var(--sienna)}
+
+/* Densité sur grand écran : les blocs "travail" occupent toute la largeur */
+@media (min-width:900px){
+  #commander>.shell{
+    display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);
+    column-gap:clamp(48px,6vw,88px);align-items:start;
+  }
+  #commander .movement-head{grid-column:1/-1}
+  #commander .order-info{
+    grid-template-columns:1fr;border:0;margin:0;
+    border-top:1px solid var(--rule);position:sticky;top:96px;
+  }
+  #commander .order-info-item{
+    border-right:0;border-bottom:1px solid var(--rule);padding:20px 0;
+  }
+  #commander .order-form{max-width:none}
+  #contact .map-embed{grid-column:2;grid-row:2;margin-top:clamp(28px,3vw,40px);align-self:start}
+  #contact .contact-main{grid-row:1 / span 2;align-self:start}
+}
 
 /* ---------- Colophon (pied de page sombre) ---------- */
 .colophon{background:var(--ink);color:#e4d9c6;padding:clamp(64px,9vw,104px) 0}

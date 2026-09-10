@@ -437,6 +437,20 @@ textarea{resize:vertical;min-height:120px}
 .lightbox-nav svg{width:24px;height:24px}
 body.no-scroll{overflow:hidden}
 
+/* Repli de la galerie */
+.gallery-toggle{
+  display:flex;align-items:center;gap:8px;width:-moz-fit-content;width:fit-content;
+  margin:0 auto 36px;padding:10px 20px;min-height:40px;
+  border:1px solid var(--line);border-radius:999px;background:#fff;
+  font-family:inherit;font-size:14px;font-weight:500;color:var(--ink-soft);
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  transition:border-color .15s ease,color .15s ease;
+}
+.gallery-toggle:hover{border-color:var(--rose-deep);color:var(--rose-deep)}
+.gallery-toggle svg{width:14px;height:14px;transition:transform .25s var(--ease-out)}
+.gallery-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+#galleryPanel[hidden]{display:none}
+
 /* Compteur de créations sous les filtres */
 .gallery-count{
   text-align:center;margin:-16px auto 34px;

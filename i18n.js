@@ -60,6 +60,8 @@
         "gallery.filterAll": "Tous",
         "gallery.countAll": "{total} créations",
         "gallery.countFiltered": "{n} sur {total} créations",
+        "gallery.collapse": "Réduire la galerie",
+        "gallery.expand": "Voir les créations",
 
         "order.eyebrow": "Votre commande",
         "order.title": "Décrivez le gâteau de vos rêves",
@@ -360,6 +362,8 @@
         "gallery.filterAll": "All",
         "gallery.countAll": "{total} creations",
         "gallery.countFiltered": "{n} of {total} creations",
+        "gallery.collapse": "Collapse the gallery",
+        "gallery.expand": "Show the creations",
 
         "order.eyebrow": "Your order",
         "order.title": "Describe the cake of your dreams",
@@ -660,6 +664,8 @@
         "gallery.filterAll": "Alle",
         "gallery.countAll": "{total} creaties",
         "gallery.countFiltered": "{n} van {total} creaties",
+        "gallery.collapse": "Galerij inklappen",
+        "gallery.expand": "Creaties tonen",
 
         "order.eyebrow": "Je bestelling",
         "order.title": "Beschrijf de taart van je dromen",

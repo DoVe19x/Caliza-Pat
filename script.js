@@ -55,6 +55,8 @@
   var ALL_FILTER = "__ALL__";
   var currentLang = "fr";
   var currentFilter = ALL_FILTER;
+  var galleryOpen = true;
+  var galleryToggleApply = null;
 
   /* ---------- Helpers i18n ---------- */
 
@@ -162,7 +164,47 @@
     renderFilters();
     renderGallery();
     if (carouselApi) carouselApi.render();
+    if (galleryToggleApply) galleryToggleApply(false);
     updateLangButtons();
+  }
+
+  /* ---------- Galerie repliable ---------- */
+
+  function setupGalleryToggle() {
+    var panel = document.getElementById("galleryPanel");
+    var btns = document.querySelectorAll("[data-gallery-toggle]");
+    if (!panel || !btns.length) return;
+    var KEY = "caliza-gallery-open";
+    try { galleryOpen = localStorage.getItem(KEY) !== "0"; } catch (e) { galleryOpen = true; }
+
+    function apply(userAction) {
+      panel.hidden = !galleryOpen;
+      btns.forEach(function (b) {
+        b.setAttribute("aria-expanded", String(galleryOpen));
+        var lbl = b.querySelector(".gallery-toggle-label") || b;
+        lbl.textContent = t(galleryOpen ? "gallery.collapse" : "gallery.expand");
+      });
+      if (galleryOpen) {
+        panel.querySelectorAll(".cake-card:not(.is-in)").forEach(function (c) {
+          c.classList.add("is-in");
+        });
+      }
+      if (userAction && !galleryOpen) {
+        var sec = document.getElementById("inspiration-gallery");
+        if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        galleryOpen = !galleryOpen;
+        try { localStorage.setItem(KEY, galleryOpen ? "1" : "0"); } catch (e) {}
+        apply(true);
+      });
+    });
+
+    galleryToggleApply = apply;
+    apply(false);
   }
 
   function detectLang() {
@@ -714,6 +756,7 @@
     setupForm();
     setupConditionalFields();
     setYear();
+    setupGalleryToggle();
     setLanguage(currentLang, { save: false });
     setupReveal();
   });

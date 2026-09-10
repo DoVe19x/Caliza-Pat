@@ -116,14 +116,20 @@
           la voir en entier, ou sur « M'inspirer de celui-ci » pour pré-remplir votre note de
           commande. Vous pourrez ensuite l'adapter à vos goûts, vos couleurs et vos saveurs.
         </p>
+        <button type="button" class="gallery-toggle" data-gallery-toggle aria-expanded="true" aria-controls="galleryPanel">
+          <span class="gallery-toggle-label">Réduire la galerie</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
 
-      <div class="index-bar">
-        <div class="gallery-filters" id="galleryFilters" role="group" data-i18n-aria="a11y.filterGroup" aria-label="Filtrer les inspirations"></div>
-        <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
-      </div>
+      <div id="galleryPanel">
+        <div class="index-bar">
+          <div class="gallery-filters" id="galleryFilters" role="group" data-i18n-aria="a11y.filterGroup" aria-label="Filtrer les inspirations"></div>
+          <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
+        </div>
 
-      <div class="gallery" id="gallery"><!-- injected --></div>
+        <div class="gallery" id="gallery"><!-- injected --></div>
+      </div>
     </div>
   </section>
 
@@ -334,6 +340,7 @@
         </ol>
       </div>
       <div class="map-embed">
+        <a class="map-fallback" href="https://www.google.com/maps?q=Braine-le-Ch%C3%A2teau,+Belgique" target="_blank" rel="noopener" data-i18n="a11y.mapTitle">Localisation approximative à Braine-le-Château</a>
         <iframe
           src="https://www.google.com/maps?q=Braine-le-Ch%C3%A2teau,%20Belgique&z=13&output=embed"
           title="Localisation approximative à Braine-le-Château"
